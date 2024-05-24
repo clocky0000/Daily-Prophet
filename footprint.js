@@ -19,8 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 body.appendChild(footprint);
 
                 setTimeout(() => {
-                    body.removeChild(footprint);
+                    footprint.style.animation = 'fadeOut 0.75s forwards';
+                    setTimeout(() => {
+                        body.removeChild(footprint);
+                    }, 750);
                 }, 4000);
+
             }, i * 750); // 각 발자국은 0.5초 간격으로 생성
         }
     }
