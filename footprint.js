@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 footprint.style.top = `${startY + stepLength * i * Math.sin(angle * Math.PI / 180)}px`;
                 footprint.style.transform = `rotate(${angle + 90}deg)`;
                 body.appendChild(footprint);
+
+                setTimeout(() => {
+                    body.removeChild(footprint);
+                }, 4000);
             }, i * 750); // 각 발자국은 0.5초 간격으로 생성
         }
     }
